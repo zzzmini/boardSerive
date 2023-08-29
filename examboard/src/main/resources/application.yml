@@ -4,14 +4,19 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/exam_board?serverTimezone=Asia/Seoul
     username: root
     password: 1111
 
   jpa:
     hibernate:
-      ddl-auto: validate #create update none
+      ddl-auto: create #create update none
     show-sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
 
 ---
 
